@@ -3,7 +3,7 @@
 const App = {
     WhatsApp: {
         // COLOQUE O NÚMERO AQUI (formato internacional sem +)
-        number: "551151049414", 
+        number: "551151044914", 
         
         // Mensagem genérica e oficial
         defaultMessage: "Olá! Gostaria de regularizar a mensalidade do meu plano de saúde.",
@@ -40,3 +40,4 @@ const App = {
 };
 
 document.addEventListener('DOMContentLoaded', () => App.init());
+
