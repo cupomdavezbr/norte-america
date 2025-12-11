@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#003B71">
+    <meta name="description" content="Portal do Beneficiário. Regularize a mensalidade do seu plano de saúde de forma rápida e segura pelo WhatsApp.">
+    
+    <title>Portal do Beneficiário | Regularização Financeira</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round|Material+Icons+Outlined" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script>document.documentElement.classList.replace('no-js', 'js-enabled');</script>
+</head>
+
+<body id="top">
+
+    <div class="system-status-bar">
+        <div class="container flex-end">
+            <div class="status-item"><span class="indicator online"></span> Central de Atendimento Ativa</div>
+        </div>
+    </div>
+
+    <header class="site-header" id="header">
+        <div class="container header-container">
+            <a href="/" class="logo-link">
+                <svg width="220" height="40" viewBox="0 0 220 40" fill="none">
+                    <rect x="0" y="4" width="32" height="32" rx="6" fill="#003B71"/>
+                    <path d="M16 12V28M8 20H24" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                    
+                    <text x="42" y="22" font-family="'Manrope'" font-weight="800" font-size="16" fill="#003B71">PORTAL DO</text>
+                    <text x="42" y="36" font-family="'Manrope'" font-weight="800" font-size="16" fill="#F26522">BENEFICIÁRIO</text>
+                </svg>
+            </a>
+
+            <div class="header-actions">
+                <button class="btn-whatsapp-outline btn-sm" onclick="App.WhatsApp.open()">
+                    <span class="material-icons-round">whatsapp</span>
+                    Central de Regularização
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-whatsapp">
+            <div class="container hero-grid">
+                
+                <div class="hero-info">
+                    <div class="secure-tag"><span class="material-icons-round">verified_user</span> Canal Oficial</div>
+                    <h1>Regularize a mensalidade do seu <span class="text-brand">Plano de Saúde.</span></h1>
+                    <p class="hero-desc">
+                        Evite a suspensão do seu convênio. Fale agora com a nossa equipe financeira pelo WhatsApp e receba o boleto atualizado para pagamento.
+                    </p>
+                    
+                    <button class="btn-whatsapp-hero pulse-effect" onclick="App.WhatsApp.open()">
+                        <span class="material-icons-round">whatsapp</span>
+                        SOLICITAR MENSALIDADE
+                    </button>
+                    <p class="small-text mt-15">Atendimento Exclusivo para Beneficiários</p>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="chat-mockup fade-in-up">
+                        <div class="mock-header">
+                            <div class="mock-avatar">
+                                <img src="https://i.pravatar.cc/100?img=33" alt="Atendente">
+                                <span class="dot-online"></span>
+                            </div>
+                            <div class="mock-user">
+                                <strong>Central do Beneficiário</strong>
+                                <span>Online agora</span>
+                            </div>
+                        </div>
+                        <div class="mock-body">
+                            <div class="msg-bubble received">
+                                Olá! Bem-vindo ao Portal. Deseja regularizar sua mensalidade?
+                            </div>
+                            <div class="msg-bubble sent">
+                                Sim, preciso da via atualizada.
+                            </div>
+                            <div class="msg-bubble received">
+                                <div class="file-attachment">
+                                    <span class="material-icons-round">description</span>
+                                    <span>Mensalidade_Plano.pdf</span>
+                                </div>
+                                Localizei seu cadastro. Segue o documento para pagamento.
+                            </div>
+                        </div>
+                        <div class="mock-footer">
+                            <button class="btn-mock-action" onclick="App.WhatsApp.open()">Falar com Especialista</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works-section">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h2>Mantenha seu convênio ativo</h2>
+                    <p>Regularize sua situação financeira em 3 passos simples.</p>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step-item fade-on-scroll">
+                        <div class="step-number">1</div>
+                        <div class="step-icon"><span class="material-icons-round">perm_phone_msg</span></div>
+                        <h4>Inicie a Conversa</h4>
+                        <p>Clique no botão e fale com a central de regularização.</p>
+                    </div>
+                    
+                    <div class="step-connector"></div>
+
+                    <div class="step-item fade-on-scroll">
+                        <div class="step-number">2</div>
+                        <div class="step-icon"><span class="material-icons-round">badge</span></div>
+                        <h4>Identifique-se</h4>
+                        <p>Informe o CPF do titular para localizarmos o contrato.</p>
+                    </div>
+
+                    <div class="step-connector"></div>
+
+                    <div class="step-item fade-on-scroll">
+                        <div class="step-number">3</div>
+                        <div class="step-icon"><span class="material-icons-round">check_circle_outline</span></div>
+                        <h4>Plano Regularizado</h4>
+                        <p>Receba o boleto, pague e garanta a continuidade do atendimento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="container">
+                <div class="grid-layout-3">
+                    <article class="feature-card fade-on-scroll">
+                        <div class="icon-box blue-bg"><span class="material-icons-round">verified</span></div>
+                        <h3>Segurança</h3>
+                        <p>Canal exclusivo para tratativas financeiras do seu plano de saúde.</p>
+                    </article>
+
+                    <article class="feature-card fade-on-scroll">
+                        <div class="icon-box green-bg"><span class="material-icons-round">bolt</span></div>
+                        <h3>Agilidade</h3>
+                        <p>Após o pagamento, a baixa no sistema ocorre de forma prioritária.</p>
+                    </article>
+
+                    <article class="feature-card fade-on-scroll">
+                        <div class="icon-box orange-bg"><span class="material-icons-round">medical_services</span></div>
+                        <h3>Sem Bloqueios</h3>
+                        <p>Evite o cancelamento ou suspensão do plano regularizando hoje.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container small-container">
+                <div class="section-title text-center">
+                    <h2>Perguntas Frequentes</h2>
+                </div>
+
+                <div class="accordion">
+                    <details class="accordion-item">
+                        <summary>
+                            Meu plano está suspenso. Consigo reativar?
+                            <span class="material-icons-round arrow">expand_more</span>
+                        </summary>
+                        <div class="accordion-content">
+                            <p>Sim. Solicite a fatura de regularização no WhatsApp. Após a compensação do pagamento, seu plano será normalizado conforme as regras da ANS.</p>
+                        </div>
+                    </details>
+
+                    <details class="accordion-item">
+                        <summary>
+                            Quais formas de pagamento são aceitas?
+                            <span class="material-icons-round arrow">expand_more</span>
+                        </summary>
+                        <div class="accordion-content">
+                            <p>Emitimos a mensalidade atualizada via boleto bancário ou código para pagamento instantâneo, conforme sua preferência.</p>
+                        </div>
+                    </details>
+
+                    <details class="accordion-item">
+                        <summary>
+                            Posso regularizar mensalidades antigas?
+                            <span class="material-icons-round arrow">expand_more</span>
+                        </summary>
+                        <div class="accordion-content">
+                            <p>Sim. Nossa equipe levantará todos os débitos pendentes e enviará a proposta de regularização total.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Portal do <span>Beneficiário</span></h3>
+                    <p>Central de Apoio e Gestão Financeira.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="politicas.html">Privacidade</a>
+                    <a href="termos.html">Termos de Uso</a>
+                </div>
+                <p class="copyright">&copy; 2025 Portal do Beneficiário. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="fab-whatsapp pulse-effect" onclick="App.WhatsApp.open()" aria-label="Falar no WhatsApp">
+        <span class="material-icons-round">whatsapp</span>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
