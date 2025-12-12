@@ -1,227 +1,316 @@
 <!DOCTYPE html>
-<html lang="pt-br" dir="ltr" class="no-js">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="theme-color" content="#003B71">
-    <meta name="description" content="Portal do Beneficiário. Regularize a mensalidade do seu plano de saúde de forma rápida e segura pelo WhatsApp.">
-    
-    <title>Portal do Beneficiário | Regularização Financeira</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round|Material+Icons+Outlined" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Atendimento | Portal do Beneficiário</title>
 
-    <script>document.documentElement.classList.replace('no-js', 'js-enabled');</script>
+    <meta name="description" content="Portal do Beneficiário - 2ª via de fatura, reembolsos, carteirinha digital e suporte completo. Atendimento humanizado via WhatsApp.">
+    <meta name="theme-color" content="#0054a6"> 
+    <meta property="og:title" content="Portal do Beneficiário">
+    <meta property="og:description" content="Gerencie seu plano de saúde com facilidade.">
+    <meta property="og:type" content="website">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brandBlue: {
+                            50: '#eef6ff',
+                            100: '#dbeafe',
+                            500: '#2563eb',
+                            600: '#0054a6', // Azul Hapvida
+                            800: '#004285', 
+                            900: '#003366', 
+                        },
+                        brandOrange: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#f97316',
+                            600: '#ea580c', // Laranja Hapvida (aproximado)
+                            700: '#c2410c',
+                        },
+                    },
+                    boxShadow: {
+                        soft: '0 16px 32px -12px rgba(0,0,0,0.1)',
+                    },
+                },
+            },
+        };
+    </script>
 </head>
 
-<body id="top">
+<body class="bg-slate-50 text-slate-800 antialiased">
 
-    <div class="system-status-bar">
-        <div class="container flex-end">
-            <div class="status-item"><span class="indicator online"></span> Central de Atendimento Ativa</div>
+<header class="fixed w-full top-0 z-40 bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-sm transition-all">
+    <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+
+        <a href="#" class="flex items-center gap-2">
+            <div class="w-10 h-10 bg-brandBlue-600 rounded-lg flex items-center justify-center text-white shadow-lg">
+                H
+            </div>
+            <span class="text-2xl font-extrabold text-brandBlue-900">
+                Portal<span class="text-brandOrange-600">Beneficiário</span>
+            </span>
+        </a>
+
+        <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-600">
+            <a href="#servicos" class="hover:text-brandBlue-600 transition">Meus Serviços</a>
+            <a href="https://api.whatsapp.com/send?phone=551231971454" target="_blank" rel="noopener" class="hover:text-brandOrange-600 transition flex items-center gap-1">
+                Financeiro
+            </a>
+            <a href="#suporte" class="hover:text-brandBlue-600 transition">Suporte</a>
+        </nav>
+
+        <button id="menuBtn"
+                class="lg:hidden w-10 h-10 flex items-center justify-center rounded-md hover:bg-slate-100 transition">
+            <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-width="2" d="M4 8h16M4 16h16"/>
+            </svg>
+        </button>
+    </div>
+
+    <div id="mobileMenu" class="hidden lg:hidden px-4 pb-6 bg-white border-t border-gray-200 shadow-md">
+        <a href="#servicos" class="block py-3 text-slate-700 hover:text-brandBlue-600">Meus Serviços</a>
+        <a href="https://api.whatsapp.com/send?phone=551231971454" target="_blank" class="block py-3 text-slate-700 hover:text-brandOrange-600">Financeiro</a>
+        <a href="#suporte" class="block py-3 text-slate-700 hover:text-brandBlue-600">Suporte</a>
+    </div>
+</header>
+
+<script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.onclick = () => {
+        mobileMenu.classList.toggle("hidden");
+    };
+</script>
+
+<section class="pt-36 pb-32 bg-gradient-to-br from-white via-brandBlue-50 to-white">
+    <div class="container mx-auto px-4 text-center"> 
+        <div class="max-w-4xl mx-auto space-y-8">
+            
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-brandBlue-100 shadow mb-4">
+                <span class="w-2 h-2 bg-brandOrange-500 rounded-full"></span>
+                <span class="text-xs font-semibold text-brandBlue-900 uppercase">Área Exclusiva Beneficiário</span>
+            </div>
+
+            <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight text-brandBlue-900">
+                Bem-vindo ao seu <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandBlue-600 to-brandBlue-800">Novo Portal de Saúde</span>
+            </h1>
+
+            <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                Emissão de boletos, carteirinha virtual, reembolsos e suporte. <br>
+                Tudo o que você precisa em um ambiente rápido, seguro e intuitivo.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                <a href="https://api.whatsapp.com/send?phone=551231971454"
+                   target="_blank"
+                   class="bg-brandOrange-600 text-white px-10 py-4 rounded-full font-bold shadow-lg hover:bg-brandOrange-700 hover:shadow-xl transition transform hover:-translate-y-1">
+                    Acessar Serviços
+                </a>
+
+                <a href="#suporte"
+                   class="bg-white border-2 border-brandBlue-100 text-brandBlue-900 px-10 py-4 rounded-full font-bold hover:border-brandOrange-500 hover:text-brandOrange-600 transition">
+                    Preciso de Ajuda
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="servicos" class="relative z-20 -mt-16 mb-24">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <div class="bg-white rounded-xl shadow-soft p-8 flex items-center gap-5 border-t-4 border-brandOrange-500 
+                        hover:-translate-y-1 hover:shadow-lg transition cursor-pointer group">
+                <div class="w-12 h-12 rounded-lg border border-brandOrange-100 bg-brandOrange-50 
+                            flex items-center justify-center text-brandOrange-600 group-hover:bg-brandOrange-600 
+                            group-hover:text-white transition">
+                    📄
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-brandBlue-900">2ª Via de Fatura</h3>
+                    <p class="text-sm text-slate-500 mt-1 leading-tight">Acesse seus boletos rapidamente.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-soft p-8 flex items-center gap-5 border-t-4 border-brandBlue-900 
+                        hover:-translate-y-1 hover:shadow-lg transition cursor-pointer group">
+                <div class="w-12 h-12 rounded-lg border border-brandBlue-100 bg-brandBlue-50 
+                            flex items-center justify-center text-brandBlue-900 group-hover:bg-brandBlue-900 
+                            group-hover:text-white transition">
+                    🪪
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-brandBlue-900">Carteirinha Virtual</h3>
+                    <p class="text-sm text-slate-500 mt-1 leading-tight">Sua identificação digital.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-soft p-8 flex items-center gap-5 border-t-4 border-brandOrange-500
+                        hover:-translate-y-1 hover:shadow-lg transition cursor-pointer group">
+                <div class="w-12 h-12 rounded-lg border border-brandOrange-100 bg-brandOrange-50 
+                            flex items-center justify-center text-brandOrange-600 group-hover:bg-brandOrange-600 
+                            group-hover:text-white transition">
+                    💰
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-brandBlue-900">Solicitar Reembolso</h3>
+                    <p class="text-sm text-slate-500 mt-1 leading-tight">Envie e acompanhe solicitações.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="suporte" class="py-24 bg-brandBlue-900 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-64 h-64 bg-brandOrange-500 rounded-full blur-3xl opacity-10 -translate-y-1/2 translate-x-1/2"></div>
+
+    <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-16 relative z-10">
+
+        <div class="w-full lg:w-1/2 text-white space-y-8">
+            <h2 class="text-3xl md:text-4xl font-extrabold leading-tight">
+                Ainda com dúvidas? <br>
+                <span class="text-brandOrange-500">Fale com nosso time.</span>
+            </h2>
+
+            <p class="text-brandBlue-100 text-lg max-w-md leading-relaxed">
+                Nossa equipe está pronta para te atender via WhatsApp com rapidez e o padrão de qualidade Hapvida.
+            </p>
+
+            <div class="flex items-center gap-4 p-4 bg-brandBlue-800/50 rounded-xl border border-brandBlue-700/50">
+                <div>
+                    <p class="text-white font-semibold text-sm">Atendimento Humanizado</p>
+                    <p class="text-brandBlue-200 text-xs">Segunda a Sexta, 08h às 22h</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full lg:w-1/2 max-w-md bg-white p-8 rounded-2xl shadow-xl text-center space-y-6">
+            <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto text-2xl">
+                💬
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-900">Canal de Atendimento</h3>
+            <p class="text-slate-500 text-sm">Clique abaixo para iniciar a conversa.</p>
+
+            <a href="https://api.whatsapp.com/send?phone=551231971454"
+               target="_blank"
+               rel="noopener"
+               class="block w-full bg-[#25D366] text-white px-6 py-3.5 rounded-lg font-bold shadow-md 
+                      hover:bg-[#1ebe5f] hover:shadow-lg transition">
+                Iniciar WhatsApp
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10 text-sm">
+
+        <div class="col-span-1 md:col-span-2 space-y-4">
+            <span class="text-xl font-extrabold text-white">
+                Portal<span class="text-brandOrange-600">Beneficiário</span>
+            </span>
+
+            <p class="max-w-sm leading-relaxed text-sm">
+                Sua central de relacionamento. Gestão simples e transparente do seu plano de saúde Hapvida.
+            </p>
+
+            <div class="text-slate-500 text-xs space-y-1 pt-4">
+                <p><strong>CNPJ:</strong> 23.591.482/0001-95</p>
+                <p>Central de Atendimento a Corretora de Seguros Ltda.</p>
+            </div>
+        </div>
+
+        <div class="space-y-3">
+            <h4 class="font-bold text-white">Navegação</h4>
+            <ul class="space-y-2">
+                <li><a href="#" class="hover:text-brandOrange-500 transition">Início</a></li>
+                <li><a href="#servicos" class="hover:text-brandOrange-500 transition">Serviços</a></li>
+                <li><a href="politica.html" class="hover:text-brandOrange-500 transition">Privacidade</a></li>
+            </ul>
+        </div>
+
+        <div class="space-y-3">
+            <h4 class="font-bold text-white">Contatos</h4>
+            <div class="space-y-2 text-slate-400">
+                <a href="tel:+551231971454" class="hover:text-white transition">+55 (12) 3197-1454</a>
+                <p>suporte@portaldocliente.com.br</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container mx-auto px-4 mt-10 pt-6 border-t border-slate-800 text-center text-slate-500 text-xs">
+        &copy; 2025 — Todos os direitos reservados.
+    </div>
+</footer>
+
+<a href="https://api.whatsapp.com/send?phone=551231971454"
+   target="_blank"
+   rel="noopener"
+   class="fixed bottom-6 right-6 z-50 w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:bg-[#1ebe5f] transition-all duration-300 hover:-translate-y-1"
+   aria-label="Fale conosco pelo WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+</a>
+<div id="cookie-banner"
+     class="fixed bottom-4 left-4 right-4 md:right-4 md:max-w-md bg-white shadow-lg border 
+            border-gray-200 p-5 rounded-xl z-50 flex flex-col gap-4 hidden">
+
+    <div class="flex items-start gap-3">
+        <span class="text-2xl">🍪</span>
+        <div>
+            <h4 class="font-bold text-slate-900 text-sm">Cookies e Privacidade</h4>
+            <p class="text-xs text-slate-500 mt-1">
+                Usamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa política.
+            </p>
         </div>
     </div>
 
-    <header class="site-header" id="header">
-        <div class="container header-container">
-            <a href="/" class="logo-link">
-                <svg width="220" height="40" viewBox="0 0 220 40" fill="none">
-                    <rect x="0" y="4" width="32" height="32" rx="6" fill="#003B71"/>
-                    <path d="M16 12V28M8 20H24" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                    
-                    <text x="42" y="22" font-family="'Manrope'" font-weight="800" font-size="16" fill="#003B71">PORTAL DO</text>
-                    <text x="42" y="36" font-family="'Manrope'" font-weight="800" font-size="16" fill="#F26522">BENEFICIÁRIO</text>
-                </svg>
-            </a>
+    <div class="flex gap-2 justify-end">
+        <button id="cookie-close" 
+                class="text-xs font-medium text-slate-500 px-4 py-2 hover:bg-gray-50 rounded-lg">
+            Fechar
+        </button>
 
-            <div class="header-actions">
-                <button class="btn-whatsapp-outline btn-sm" onclick="App.WhatsApp.open()">
-                    <span class="material-icons-round">whatsapp</span>
-                    Central de Regularização
-                </button>
-            </div>
-        </div>
-    </header>
+        <button id="cookie-accept"
+                class="text-xs font-bold text-white bg-brandOrange-600 px-5 py-2 rounded-lg hover:bg-brandOrange-700">
+            Concordar
+        </button>
+    </div>
+</div>
 
-    <main>
-        <section class="hero-whatsapp">
-            <div class="container hero-grid">
-                
-                <div class="hero-info">
-                    <div class="secure-tag"><span class="material-icons-round">verified_user</span> Canal Oficial</div>
-                    <h1>Regularize a mensalidade do seu <span class="text-brand">Plano de Saúde.</span></h1>
-                    <p class="hero-desc">
-                        Evite a suspensão do seu convênio. Fale agora com a nossa equipe financeira pelo WhatsApp e receba o boleto atualizado para pagamento.
-                    </p>
-                    
-                    <button class="btn-whatsapp-hero pulse-effect" onclick="App.WhatsApp.open()">
-                        <span class="material-icons-round">whatsapp</span>
-                        SOLICITAR MENSALIDADE
-                    </button>
-                    <p class="small-text mt-15">Atendimento Exclusivo para Beneficiários</p>
-                </div>
+<script>
+    const banner = document.getElementById("cookie-banner");
 
-                <div class="hero-visual">
-                    <div class="chat-mockup fade-in-up">
-                        <div class="mock-header">
-                            <div class="mock-avatar">
-                                <img src="https://i.pravatar.cc/100?img=33" alt="Atendente">
-                                <span class="dot-online"></span>
-                            </div>
-                            <div class="mock-user">
-                                <strong>Central do Beneficiário</strong>
-                                <span>Online agora</span>
-                            </div>
-                        </div>
-                        <div class="mock-body">
-                            <div class="msg-bubble received">
-                                Olá! Bem-vindo ao Portal. Deseja regularizar sua mensalidade?
-                            </div>
-                            <div class="msg-bubble sent">
-                                Sim, preciso da via atualizada.
-                            </div>
-                            <div class="msg-bubble received">
-                                <div class="file-attachment">
-                                    <span class="material-icons-round">description</span>
-                                    <span>Mensalidade_Plano.pdf</span>
-                                </div>
-                                Localizei seu cadastro. Segue o documento para pagamento.
-                            </div>
-                        </div>
-                        <div class="mock-footer">
-                            <button class="btn-mock-action" onclick="App.WhatsApp.open()">Falar com Especialista</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    if (!localStorage.getItem("cookiesAccepted")) {
+        banner.classList.remove("hidden");
+    }
 
-        <section class="how-it-works-section">
-            <div class="container">
-                <div class="section-title text-center">
-                    <h2>Mantenha seu convênio ativo</h2>
-                    <p>Regularize sua situação financeira em 3 passos simples.</p>
-                </div>
+    document.getElementById("cookie-accept").onclick = () => {
+        localStorage.setItem("cookiesAccepted", "true");
+        banner.classList.add("hidden");
+    };
 
-                <div class="steps-container">
-                    <div class="step-item fade-on-scroll">
-                        <div class="step-number">1</div>
-                        <div class="step-icon"><span class="material-icons-round">perm_phone_msg</span></div>
-                        <h4>Inicie a Conversa</h4>
-                        <p>Clique no botão e fale com a central de regularização.</p>
-                    </div>
-                    
-                    <div class="step-connector"></div>
-
-                    <div class="step-item fade-on-scroll">
-                        <div class="step-number">2</div>
-                        <div class="step-icon"><span class="material-icons-round">badge</span></div>
-                        <h4>Identifique-se</h4>
-                        <p>Informe o CPF do titular para localizarmos o contrato.</p>
-                    </div>
-
-                    <div class="step-connector"></div>
-
-                    <div class="step-item fade-on-scroll">
-                        <div class="step-number">3</div>
-                        <div class="step-icon"><span class="material-icons-round">check_circle_outline</span></div>
-                        <h4>Plano Regularizado</h4>
-                        <p>Receba o boleto, pague e garanta a continuidade do atendimento.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="services-section">
-            <div class="container">
-                <div class="grid-layout-3">
-                    <article class="feature-card fade-on-scroll">
-                        <div class="icon-box blue-bg"><span class="material-icons-round">verified</span></div>
-                        <h3>Segurança</h3>
-                        <p>Canal exclusivo para tratativas financeiras do seu plano de saúde.</p>
-                    </article>
-
-                    <article class="feature-card fade-on-scroll">
-                        <div class="icon-box green-bg"><span class="material-icons-round">bolt</span></div>
-                        <h3>Agilidade</h3>
-                        <p>Após o pagamento, a baixa no sistema ocorre de forma prioritária.</p>
-                    </article>
-
-                    <article class="feature-card fade-on-scroll">
-                        <div class="icon-box orange-bg"><span class="material-icons-round">medical_services</span></div>
-                        <h3>Sem Bloqueios</h3>
-                        <p>Evite o cancelamento ou suspensão do plano regularizando hoje.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="faq-section">
-            <div class="container small-container">
-                <div class="section-title text-center">
-                    <h2>Perguntas Frequentes</h2>
-                </div>
-
-                <div class="accordion">
-                    <details class="accordion-item">
-                        <summary>
-                            Meu plano está suspenso. Consigo reativar?
-                            <span class="material-icons-round arrow">expand_more</span>
-                        </summary>
-                        <div class="accordion-content">
-                            <p>Sim. Solicite a fatura de regularização no WhatsApp. Após a compensação do pagamento, seu plano será normalizado conforme as regras da ANS.</p>
-                        </div>
-                    </details>
-
-                    <details class="accordion-item">
-                        <summary>
-                            Quais formas de pagamento são aceitas?
-                            <span class="material-icons-round arrow">expand_more</span>
-                        </summary>
-                        <div class="accordion-content">
-                            <p>Emitimos a mensalidade atualizada via boleto bancário ou código para pagamento instantâneo, conforme sua preferência.</p>
-                        </div>
-                    </details>
-
-                    <details class="accordion-item">
-                        <summary>
-                            Posso regularizar mensalidades antigas?
-                            <span class="material-icons-round arrow">expand_more</span>
-                        </summary>
-                        <div class="accordion-content">
-                            <p>Sim. Nossa equipe levantará todos os débitos pendentes e enviará a proposta de regularização total.</p>
-                        </div>
-                    </details>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Portal do <span>Beneficiário</span></h3>
-                    <p>Central de Apoio e Gestão Financeira.</p>
-                </div>
-                <div class="footer-links">
-                    <a href="politicas.html">Privacidade</a>
-                    <a href="termos.html">Termos de Uso</a>
-                </div>
-                <p class="copyright">&copy; 2025 Portal do Beneficiário. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <button class="fab-whatsapp pulse-effect" onclick="App.WhatsApp.open()" aria-label="Falar no WhatsApp">
-        <span class="material-icons-round">whatsapp</span>
-    </button>
-
-    <script src="script.js"></script>
+    document.getElementById("cookie-close").onclick = () => {
+        banner.classList.add("hidden");
+    };
+</script>
 </body>
 </html>
